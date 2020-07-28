@@ -9,7 +9,7 @@ import random
 from typing import Generator
 
 
-async def async_generator() -> Genrator[float, None, None]:
+async def async_generator() -> Generator[float, None, None]:
     """Coroutine that will loop 10 times and wait 1 sec
     """
     for _ in range(10):
