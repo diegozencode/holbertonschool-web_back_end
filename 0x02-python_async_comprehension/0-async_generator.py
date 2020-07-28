@@ -6,9 +6,10 @@ Async generator
 
 import asyncio
 import random
+from typing import AsyncGenerator
 
 
-async def async_generator():
+async def async_generator() -> AsyncGenerator:
     """Coroutine that will loop 10 times and wait 1 sec
     """
     for i in range(10):
