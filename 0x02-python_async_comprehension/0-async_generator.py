@@ -12,5 +12,5 @@ async def async_generator():
     """Coroutine that will loop 10 times and wait 1 sec
     """
     for i in range(10):
-        yield random.uniform(0, 10)
         await asyncio.sleep(1)
+        yield random.uniform(0, 10)
