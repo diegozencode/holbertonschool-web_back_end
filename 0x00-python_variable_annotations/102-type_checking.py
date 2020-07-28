@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Type checking
 """
@@ -15,6 +15,7 @@ def zoom_array(lst: Tuple, factor: int = 2) -> List:
         for i in range(factor)
     ]
     return zoomed_in
+
 
 array: Tuple = (12, 72, 91)
 
