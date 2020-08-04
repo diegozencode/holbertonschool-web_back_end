@@ -5,7 +5,6 @@ LRU Caching
 
 
 from base_caching import BaseCaching
-from datetime import datetime
 
 
 class LRUCache(BaseCaching):
