@@ -8,7 +8,7 @@ from base_caching import BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """Last In Fist Out
+    """Least recently used
     """
 
     def __init__(self):
