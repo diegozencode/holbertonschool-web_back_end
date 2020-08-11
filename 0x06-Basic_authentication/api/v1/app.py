@@ -17,6 +17,7 @@ if getenv('AUTH_TYPE') == 'auth':
     from api.v1.auth.auth import Auth
     auth = Auth()
 
+
 @app.before_request
 def before_request_handler():
     """Before request handler
@@ -25,8 +26,8 @@ def before_request_handler():
         return
 
     excluded_paths = ['/api/v1/status/',
-                     '/api/v1/unauthorized/',
-                     '/api/v1/forbidden/']
+                      '/api/v1/unauthorized/',
+                      '/api/v1/forbidden/']
     my_auth = auth.require_auth(request.path, excluded_paths)
 
     if my_auth:
