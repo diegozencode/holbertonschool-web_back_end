@@ -22,6 +22,8 @@ class RedactingFormatter(logging.Formatter):
         self.fields = fields
 
     def format(self, record: logging.LogRecord) -> str:
+        """Filter values
+        """
         return filter_datum(self.fields,
                             self.REDACTION,
                             super().format(record),
