@@ -99,19 +99,21 @@ def main() -> None:
     cursor.execute(query)
     records = cursor.fetchall()
     for row in records:
-        message = f"name={row[0]};\
-                    email={row[1]};\
-                    phone={row[2]};\
-                    ssn={row[3]};\
-                    password={row[4]};\
-                    ip={row[5]};\
-                    last_login={row[6]};\
-                    user_agent={row[7]}"
+        message = (
+            f"name={row[0]}; "
+            f"email={row[1]}; "
+            f"phone={row[2]}; "
+            f"ssn={row[3]}; "
+            f"password={row[4]}; "
+            f"ip={row[5]}; "
+            f"last_login={row[6]}; "
+            f"user_agent={row[7]}"
+        )
         log_record = logging.LogRecord(
-            "my_logger", logging.INFO, None, None, message, None, None
+            "user_data", logging.INFO, None, None, message, None, None
             )
         formatter = RedactingFormatter(PII_FIELDS)
-        formatter.format(log_record)
+        print(formatter.format(log_record))
     cursor.close()
     db.close()
 
