@@ -7,6 +7,8 @@ Regex-ing
 from typing import List
 import logging
 import re
+import os
+import mysql.connector
 
 
 PII_FIELDS = ('name', 'email', 'phone', 'ssn', 'password')
@@ -67,3 +69,54 @@ def get_logger() -> logging.Logger:
     logger.addHandler(handler)
 
     return logger
+
+
+def get_db() -> mysql.connector.connection.MySQLConnection:
+    """Connector to the database
+    """
+
+    HOST = os.getenv('PERSONAL_DATA_DB_HOST')
+    DATABASE = os.getenv('PERSONAL_DATA_DB_NAME')
+    USER = os.getenv('PERSONAL_DATA_DB_USERNAME')
+    PASSWORD = os.getenv('PERSONAL_DATA_DB_PASSWORD')
+
+    conn = mysql.connector.connect(
+        host=HOST,
+        database=DATABASE,
+        user=USER,
+        password=PASSWORD
+    )
+
+    return conn
+
+
+def main() -> None:
+    """read and filter data
+    """
+    db = get_db()
+    cursor = db.cursor()
+    query = "SELECT * FROM users;"
+    cursor.execute(query)
+    records = cursor.fetchall()
+    for row in records:
+        message = (
+            f"name={row[0]}; "
+            f"email={row[1]}; "
+            f"phone={row[2]}; "
+            f"ssn={row[3]}; "
+            f"password={row[4]}; "
+            f"ip={row[5]}; "
+            f"last_login={row[6]}; "
+            f"user_agent={row[7]}"
+        )
+        log_record = logging.LogRecord(
+            "user_data", logging.INFO, None, None, message, None, None
+            )
+        formatter = RedactingFormatter(PII_FIELDS)
+        print(formatter.format(log_record))
+    cursor.close()
+    db.close()
+
+
+if __name__ == "__main__":
+    main()
