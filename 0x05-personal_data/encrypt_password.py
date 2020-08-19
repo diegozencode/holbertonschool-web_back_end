@@ -10,6 +10,12 @@ import bcrypt
 def hash_password(password: str) -> bytes:
     """ hash a password
     """
-    passwd = u"{password}"
-    hashed = bcrypt.hashpw(passwd.encode('utf8'), bcrypt.gensalt())
+    passwd = b"{password}"
+    hashed = bcrypt.hashpw(passwd, bcrypt.gensalt())
     return hashed
+
+
+def is_valid(hashed_password: bytes, password: str) -> bool:
+    """check valid password
+    """
+    return bcrypt.checkpw(b"{password}", hashed_password)
