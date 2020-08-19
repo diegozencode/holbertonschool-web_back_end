@@ -18,26 +18,6 @@ if getenv('AUTH_TYPE') == 'auth':
     auth = Auth()
 
 
-@app.before_request
-def before_request_handler():
-    """Before request handler
-    """
-    if auth is None:
-        return
-
-    excluded_paths = ['/api/v1/status/',
-                      '/api/v1/unauthorized/',
-                      '/api/v1/forbidden/']
-    my_auth = auth.require_auth(request.path, excluded_paths)
-
-    if my_auth:
-        return
-    if auth.authorization_header(request) is None:
-        abort(401)
-    if auth.current_user(request) is None:
-        abort(403)
-
-
 @app.errorhandler(404)
 def not_found(error) -> str:
     """ Not found handler
@@ -57,6 +37,25 @@ def forbidden(error) -> str:
     """Not allowed to access handler
     """
     return jsonify({"error": "Forbidden"}), 403
+
+
+@app.before_request
+def before_request_handler() -> None:
+    """Before request handler
+    """
+    if auth is None:
+        return
+
+    excluded_paths = ['/api/v1/status/',
+                      '/api/v1/unauthorized/',
+                      '/api/v1/forbidden/']
+    my_auth = auth.require_auth(request.path, excluded_paths)
+
+    if my_auth:
+        if auth.authorization_header(request) is None:
+            abort(401)
+        if auth.current_user(request) is None:
+            abort(403)
 
 
 if __name__ == "__main__":
