@@ -4,6 +4,7 @@ API Authentication
 """
 
 
+from os import getenv
 from flask import request
 from typing import List, TypeVar
 import fnmatch
@@ -41,3 +42,10 @@ class Auth():
         """Nothign so far
         """
         return None
+
+    def session_cookie(self, request=None):
+        """cookie
+        """
+        if request is None:
+            return None
+        return request.cookies.get(getenv('SESSION_NAME'))
