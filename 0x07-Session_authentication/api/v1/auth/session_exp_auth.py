@@ -18,8 +18,8 @@ class SessionExpAuth(SessionAuth):
         session_d = getenv('SESSION_DURATION')
         if session_d is None or not int(session_d):
             self.session_duration = 0
-
-        self.session_duration = int(session_d)
+        else:
+            self.session_duration = int(session_d)
 
     def create_session(self, user_id=None):
         """create new session
