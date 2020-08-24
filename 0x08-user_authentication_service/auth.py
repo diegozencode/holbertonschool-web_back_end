@@ -43,10 +43,13 @@ class Auth:
     def create_session(self, email: str) -> str:
         """create new session
         """
-        user = self._db.find_user_by(email=email)
-        user_uuid = _generate_uuid()
-        self._db.update_user(user.id, session_id=user_uuid)
-        return user_uuid
+        try:
+            user = self._db.find_user_by(email=email)
+            session_id = _generate_uuid()
+            self._db.update_user(user.id, session_id=session_id)
+            return session_id
+        except NoResultFound:
+            return None
 
 
 def _hash_password(password: str) -> str:
