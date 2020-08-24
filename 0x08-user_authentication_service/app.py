@@ -4,7 +4,7 @@ Flask app
 """
 
 
-from flask import Flask, jsonify, request, abort, Response
+from flask import Flask, jsonify, request, abort
 from auth import Auth
 
 
@@ -38,10 +38,11 @@ def login() -> str:
     """
     email = request.form.get('email')
     passwd = request.form.get('password')
-    if AUTH.valid_login(email, password):
+    if AUTH.valid_login(email, passwd):
         session_id = AUTH.create_session(email)
-        Response.set_cookie("session_id", session_id)
-        return jsonify({"email": email, "message": "logged in"})
+        response = jsonify({"email": email, "message": "logged in"})
+        response.set_cookie('session_id', session_id)
+        return response
     else:
         abort(401)
 
