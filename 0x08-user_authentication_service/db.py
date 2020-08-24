@@ -45,6 +45,8 @@ class DB:
     def find_user_by(self, **kwargs):
         """find user
         """
+        if not kwargs:
+            raise InvalidRequestError
         users_fields = [
             'id',
             'email',
