@@ -4,7 +4,7 @@ Flask app
 """
 
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, abort, Response
 from auth import Auth
 
 
@@ -30,6 +30,20 @@ def users() -> str:
         return jsonify({"email": email, "message": "user created"})
     except ValueError:
         return jsonify({"message": "email already registered"}), 400
+
+
+@app.route('/sessions', methods=['POST'], strict_slashes=False)
+def login() -> str:
+    """ POST /session/
+    """
+    email = request.form.get('email')
+    passwd = request.form.get('password')
+    if AUTH.valid_login(email, password):
+        session_id = AUTH.create_session(email)
+        Response.set_cookie("session_id", session_id)
+        return jsonify({"email": email, "message": "logged in"})
+    else:
+        abort(401)
 
 
 if __name__ == "__main__":
