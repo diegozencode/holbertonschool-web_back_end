@@ -9,6 +9,7 @@ from db import DB
 from user import User
 from sqlalchemy.orm.exc import NoResultFound
 import uuid
+from typing import Union
 
 
 class Auth:
@@ -48,6 +49,17 @@ class Auth:
             session_id = _generate_uuid()
             self._db.update_user(user.id, session_id=session_id)
             return session_id
+        except Exception:
+            return None
+
+    def get_user_from_session_id(self, session_id: str) -> Union[str, None]:
+        """get user using session id
+        """
+        if session_id is None:
+            return None
+        try:
+            user = self._db.find_user_by(session_id=session_id)
+            return user
         except Exception:
             return None
 
