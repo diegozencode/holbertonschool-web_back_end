@@ -48,14 +48,17 @@ def login() -> str:
 
 
 @app.route('/sessions', methods=['DELETE'], strict_slashes=False)
-def logout() -> str:
+def logout() -> None:
     """ DELETE /sessions
     """
     session_id = request.cookies.get('session_id')
-    user = AUTH.get_user_from_session_id(session_id)
-    if user not None:
-        AUTH.destroy_session(user.id)
-        return redirect(url_for('/'))
+    if session_id:
+        user = AUTH.get_user_from_session_id(session_id)
+        if user not None:
+            AUTH.destroy_session(user.id)
+            return redirect(url_for('index'))
+        else:
+            abort(403)
     else:
         abort(403)
 
