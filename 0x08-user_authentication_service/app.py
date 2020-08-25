@@ -105,6 +105,7 @@ def update_password() -> str:
                 }), 200
         except ValueError:
             abort(403)
+    abort(403)
 
 
 if __name__ == "__main__":
