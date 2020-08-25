@@ -87,4 +87,5 @@ class DB:
                 raise ValueError
             user.key = value
 
+        self._session.add(user)
         self._session.commit()
