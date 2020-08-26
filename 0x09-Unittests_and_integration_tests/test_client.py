@@ -39,7 +39,8 @@ class TestGithubOrgClient(unittest.TestCase):
             this_repo = GithubOrgClient(org)
             self.assertEqual(this_repo._public_repos_url, payload)
 
-    def test_public_repos(self):
+    @patch('requests.get')
+    def test_public_repos(self, mock_rep):
         """test public repos
         """
         pass
