@@ -14,7 +14,8 @@ from client import GithubOrgClient
 class TestGithubOrgClient(unittest.TestCase):
     """Test github client
     """
-    def test_org(self):
+    @patch('requests.get')
+    def test_org(self, mock_get):
         """Test org url
         """
         pass
