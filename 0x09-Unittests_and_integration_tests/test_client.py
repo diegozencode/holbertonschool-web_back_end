@@ -24,14 +24,20 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         pass
 
-    def test_public_repos_url(self):
+    @parameterized.expand([
+        ("google", {"payload": True}),
+        ("abc", {"payload": False})
+    ])
+    def test_public_repos_url(self, org, payload):
         """test public repos url
         """
         with patch(
              'client.GithubOrgClient._public_repos_url',
              new_callable=PropertyMock
              ) as mock_repo:
-            pass
+            mock_repo.return_value = payload
+            this_repo = GithubOrgClient(org)
+            self.assertEqual(this_repo._public_repos_url, payload)
 
     def test_public_repos(self):
         """test public repos
