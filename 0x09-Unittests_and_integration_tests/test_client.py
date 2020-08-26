@@ -7,7 +7,7 @@ Test client
 import unittest
 from unittest.mock import Mock, patch, PropertyMock
 
-from parameterized import parameterized
+from parameterized import parameterized, param
 from client import GithubOrgClient
 
 
@@ -45,7 +45,11 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         pass
 
-    def test_has_license(self):
+    @parameterized.expand([
+        param({"license": {"key": "my_license"}}, license_key="my_license"),
+        param({"license": {"key": "other_license"}}, license_key="my_license")
+    ])
+    def test_has_license(self, repo, license_key):
         """if has license
         """
         pass
