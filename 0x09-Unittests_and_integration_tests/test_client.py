@@ -7,7 +7,7 @@ Test client
 import unittest
 from unittest.mock import Mock, patch, PropertyMock
 
-from parameterized import parameterized, param
+from parameterized import parameterized, param, parameterized_class
 from client import GithubOrgClient
 
 
@@ -65,12 +65,21 @@ class TestGithubOrgClient(unittest.TestCase):
             )
 
 
+@parameterized_class(("org_payload",
+                      "repos_payload",
+                      "expected_repos",
+                      "apache2_repos"), [
+   ("test", "test", "test", "test"),
+   ("test2", "test2", "test2", "test2")
+])
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """Test integration
     """
     @classmethod
     def setUpClass(cls):
-        pass
+        mock_get_patcher = patch('rewuests.get')
+        mock_get = mock_get_patcher.start()
+        mock_get_patcher.stop()
 
     @classmethod
     def tearDownClass(cls):
