@@ -5,7 +5,7 @@ Test client
 
 
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import Mock, patch, PropertyMock
 
 from parameterized import parameterized
 from client import GithubOrgClient
@@ -27,7 +27,11 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_public_repos_url(self):
         """test public repos url
         """
-        pass
+        with patch(
+             'client.GithubOrgClient._public_repos_url',
+             new_callable=PropertyMock
+             ) as mock_repo:
+            pass
 
     def test_public_repos(self):
         """test public repos
