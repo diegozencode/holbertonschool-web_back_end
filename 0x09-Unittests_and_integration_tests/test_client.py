@@ -46,16 +46,33 @@ class TestGithubOrgClient(unittest.TestCase):
         pass
 
     @parameterized.expand([
-        param({"license": {"key": "my_license"}}, license_key="my_license"),
-        param({"license": {"key": "other_license"}}, license_key="my_license")
+        param(
+            {"license": {"key": "my_license"}},
+            True,
+            license_key="my_license",
+            ),
+        param(
+            {"license": {"key": "other_license"}},
+            False,
+            license_key="my_license",
+            )
     ])
-    def test_has_license(self, repo, license_key):
+    def test_has_license(self, repo, return_val, license_key):
         """if has license
         """
-        pass
+        self.assertEqual(
+            GithubOrgClient.has_license(repo, license_key), return_val
+            )
 
 
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """Test integration
     """
+    @classmethod
+    def setUpClass(cls):
+        pass
+
+    @classmethod
+    def tearDownClass(cls):
+        pass
     pass
