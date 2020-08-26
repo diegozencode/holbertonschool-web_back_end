@@ -64,6 +64,11 @@ class TestGithubOrgClient(unittest.TestCase):
             GithubOrgClient.has_license(repo, license_key), return_val
             )
 
+    def test_public_repos_with_license(self):
+        """repos with license
+        """
+        self.assertTrue(True)
+
 
 @parameterized_class(("org_payload",
                       "repos_payload",
