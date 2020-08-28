@@ -25,7 +25,7 @@ babel = Babel(app)
 def get_local():
     """get local time
     """
-    return request.accept_languages.best_match(app)
+    return request.accept_languages.best_match(app.config.get('LANGUAGES'))
 
 
 @app.route('/')
