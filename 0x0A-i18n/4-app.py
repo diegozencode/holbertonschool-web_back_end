@@ -26,6 +26,9 @@ babel = Babel(app)
 def get_local() -> Optional[str]:
     """get locale time
     """
+    locale = request.args.get('locale')
+    if locale and locale in app.config['LANGUAGES']:
+        return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
@@ -33,7 +36,7 @@ def get_local() -> Optional[str]:
 def index():
     """call index template
     """
-    return render_template('3-index.html')
+    return render_template('4-index.html')
 
 
 if __name__ == "__main__":
