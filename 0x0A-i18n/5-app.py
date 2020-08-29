@@ -48,6 +48,8 @@ def before_request():
     if login_id:
         search_user = get_user(int(login_id))
         g.user = search_user
+    else:
+        g.user = None
 
 
 @babel.localeselector

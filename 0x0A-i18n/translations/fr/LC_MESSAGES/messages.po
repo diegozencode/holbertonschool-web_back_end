@@ -28,8 +28,8 @@ msgstr "Bonjour monde!"
 
 #: templates/5-index.html:10
 msgid "logged_in_as"
-msgstr "You are logged in as %(username)s."
+msgstr "Vous êtes connecté en tant que %(username)s."
 
 #: templates/5-index.html:12
-msgid "Vous êtes connecté en tant que %(username)s."
+msgid "not_logged_in"
 msgstr "YVous n'êtes pas connecté."
