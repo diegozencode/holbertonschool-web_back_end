@@ -7,6 +7,9 @@ Basic babel setup
 from flask import Flask, render_template, request, g
 from flask_babel import Babel, gettext
 from typing import Optional
+from pytz import timezone
+from pytz.exceptions import UnknownTimeZoneError
+from datetime import datetime
 
 
 class Config:
@@ -60,11 +63,25 @@ def get_local() -> Optional[str]:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
+@babel.timezoneselector
+def get_timezone():
+    timez = request.args.get('timezone')
+    g.date = datetime.now()
+    try:
+        if timez:
+            return timezone(timez)
+        if g.user:
+            return timezone(g.user.timezone)
+        return app.config.get('BABEL_DEFAULT_TIMEZONE')
+    except UnknownTimeZoneError:
+        return app.config.get('BABEL_DEFAULT_TIMEZONE')
+
+
 @app.route('/')
 def index():
     """call index template
     """
-    return render_template('5-index.html')
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
