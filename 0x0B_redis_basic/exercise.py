@@ -26,6 +26,6 @@ class Cache:
         # generate key
         key = str(uuid.uuid4())
         # store
-        self._redis.hmset(key, data)
+        self._redis.set(key, data)
         # return key
         return key
