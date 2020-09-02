@@ -70,3 +70,13 @@ class Cache:
         if fn:
             return fn(data)
         return data
+
+    def get_str(self):
+        """parametrize get
+        """
+        pass
+
+    def get_int(self):
+        """parametrize get
+        """
+        pass
