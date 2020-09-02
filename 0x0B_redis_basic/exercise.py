@@ -33,6 +33,12 @@ def call_history(method: Callable) -> Callable:
     return wrapper
 
 
+def replay(method: Callable) -> None:
+    """ display history of calls
+    """
+    pass
+
+
 class Cache:
     """store instance of redis
     """
