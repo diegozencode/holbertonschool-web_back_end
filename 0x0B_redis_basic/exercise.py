@@ -48,7 +48,7 @@ class Cache:
         # store instance of redis client
         self._redis = redis.Redis()
         # flush the instance with 'flushdb'
-        self._redis.flushdb
+        self._redis.flushdb()
 
     @count_calls
     @call_history
