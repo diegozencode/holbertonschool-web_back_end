@@ -7,7 +7,7 @@ expiring web cache and tracker
 import requests
 
 
-def get_page():
+def get_page(url):
     """ get page
     """
     pass
