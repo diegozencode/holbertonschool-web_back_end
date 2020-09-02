@@ -11,6 +11,8 @@ from functools import wraps
 
 
 def count_calls(method: Callable) -> Callable:
+    """ increment every call
+    """
     key = method.__qualname__
 
     @wraps(method)
