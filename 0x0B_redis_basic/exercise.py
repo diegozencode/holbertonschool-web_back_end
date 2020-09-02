@@ -6,7 +6,7 @@ Writing string to Redis
 
 import uuid
 import redis
-from typing import Union
+from typing import Union, Callable, Any
 
 
 class Cache:
@@ -29,3 +29,12 @@ class Cache:
         self._redis.set(key, data)
         # return key
         return key
+
+    def get(self, key: str,
+            fn: Callable[..., Any] = None) -> Union[str, bytes, int, float]:
+        """read from redis
+        """
+        data = self._redis.get(key)
+        if fn:
+            return fn(data)
+        return data
