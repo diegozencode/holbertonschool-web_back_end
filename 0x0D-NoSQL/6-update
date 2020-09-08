@@ -1,5 +1,5 @@
 // update a document
-db.getCollection("school").update(
+db.getCollection("school").updateMany(
     {'name': 'Holberton school'},
     {$set: {'address': '972 Mision street'}},
     false,
