@@ -1,2 +1,4 @@
 // delete by match
-
+db.getCollection("school").remove(
+    {'name': 'Holberton school'}
+)
