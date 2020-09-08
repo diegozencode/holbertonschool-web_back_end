@@ -1,2 +1,7 @@
-// update a docuement
-
+// update a document
+db.getCollection("school").update(
+    {'name': 'Holberton school'},
+    {$set: {'address': '972 Mision street'}},
+    false,
+    true
+)
