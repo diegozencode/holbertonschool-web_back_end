@@ -1,4 +1,4 @@
 // list all matches name="Holberton school" in the collection school
-db.getCollection("school").findOne({
+db.getCollection("school").find({
     name: "Holberton school"
 })
