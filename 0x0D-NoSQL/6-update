@@ -2,6 +2,6 @@
 db.getCollection("school").update(
     {'name': 'Holberton school'},
     {$set: {'address': '972 Mision street'}},
-    true,
+    false,
     true
 )
