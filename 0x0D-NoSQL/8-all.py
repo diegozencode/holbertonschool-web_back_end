@@ -9,5 +9,5 @@ from pymongo import MongoClient
 
 def list_all(mongo_collection):
     if mongo_collection.find().count() > 0:
-        return mongo_collection.find()
+        return list(mongo_collection.find())
     return []
