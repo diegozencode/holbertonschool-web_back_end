@@ -29,6 +29,7 @@ if __name__ == "__main__":
     print("IPs:")
     ips = collection.aggregate([
         {"$group": {"_id": "$ip", "myCount": {"$sum": 1}}},
+        {"$sort": {"myCount": -1}},
         {"$limit": 10}
     ])
     for x in ips:
