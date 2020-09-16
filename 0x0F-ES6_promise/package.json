@@ -1,0 +1,17 @@
+{
+  "name": "0x0f-es6_promise",
+  "version": "1.0.0",
+  "description": "promises",
+  "main": "0-promise.js",
+  "dependencies": {
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.9.0",
+    "jest": "^26.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
