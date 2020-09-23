@@ -1,0 +1,20 @@
+{
+  "name": "0x10-es6_classes",
+  "version": "1.0.0",
+  "description": "ES6-Classes",
+  "main": "app.js",
+  "dependencies": {
+    "jest": "^26.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
