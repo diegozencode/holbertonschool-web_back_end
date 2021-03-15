@@ -8,6 +8,8 @@ Python is a dynamically-typed language and thanks to type annotations, the code 
 * Duck typing
 * How to validate your code with mypy
 
+Duck typing: "If it looks like a duck and quacks like a duck, it is a duck"
+
 ## Technologies & Tools:computer:
 
 ![Ubuntu](https://img.shields.io/badge/≡-Ubuntu-E95420?&style=flat-square&logo=Ubuntu&labelColor=282828)
