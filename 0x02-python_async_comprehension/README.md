@@ -1,40 +1,42 @@
 # 0x02. Python - Async Comprehension
 
-## Resources:books:
-Read or watch:
-* [PEP 530 – Asynchronous Comprehensions](https://intranet.hbtn.io/rltoken/oPa9W6Xr5LS0RFLPLVrcxw)
-* [What’s New in Python: Asynchronous Comprehensions / Generators](https://intranet.hbtn.io/rltoken/iSS3NfGQDuzzWFZrfk26mw)
-* [Type-hints for generators](https://intranet.hbtn.io/rltoken/_TDLSwMkOnk9U9tB-gW6mQ)
+## Description:bulb:
+Asynchronous operations are great
+
+* How to write an asynchronous generator
+* How to use async comprehensions
+* How to type-annotate generators
+
+## Technologies & Tools:computer:
+
+![Ubuntu](https://img.shields.io/badge/≡-Ubuntu-E95420?&style=flat-square&logo=Ubuntu&labelColor=282828)
+![Git](https://img.shields.io/badge/≡-Git-F05032?logo=git&style=flat-square&labelColor=282828)
+![GNU_Bash](https://img.shields.io/badge/≡-GNU_Bash-4EAA25?logo=GNU-Bash&style=flat-square&labelColor=282828)
+![Vim](https://img.shields.io/badge/≡-Vim-019733?logo=Vim&style=flat-square&logoColor=019733&labelColor=282828)
+![VS_Code](https://img.shields.io/badge/≡-VS_Code-007ACC?logo=visual-studio-code&style=flat-square&logoColor=007ACC&labelColor=282828)
+![Python](https://img.shields.io/badge/≡-Python-3776AB?logo=Python&style=flat-square&labelColor=282828)
+![GitHub](https://img.shields.io/badge/≡-GitHub-181717?logo=GitHub&style=flat-square&labelColor=282828)
 
 ---
-## Learning Objectives:bulb:
-What you should learn from this project:
 
-* Allowed editors: vi, vim, emacs
-* All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7)
-* All your files should end with a new line
-* The first line of all your files should be exactly #!/usr/bin/env python3
-* A README.md file, at the root of the folder of the project, is mandatory
-* Your code should use the pycodestyle style (version 2.5.x)
-* The length of your files will be tested using wc
-* All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-* All your functions should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)'
-* All your functions and coroutines must be type-annotated.
+## Resources:books:
+Read or watch:
+* [PEP 530 – Asynchronous Comprehensions](https://www.python.org/dev/peps/pep-0530/)
+* [What’s New in Python: Asynchronous Comprehensions / Generators](http://www.blog.pythonlibrary.org/2017/02/14/whats-new-in-python-asynchronous-comprehensions-generators/)
+* [Type-hints for generators](https://stackoverflow.com/questions/42531143/type-hinting-generator-in-python-3-6)
 
 ---
 
 ### [0. Async Generator](./0-async_generator.py)
-* Write a coroutine called async_generator that takes no arguments. 
-
 
 ### [1. Async Comprehensions](./1-async_comprehension.py)
-* Import async_generator from the previous task and then write a coroutine called async_comprehension that takes no arguments. 
-
 
 ### [2. Run time for four parallel comprehensions](./2-measure_runtime.py)
-* Import async_comprehension from the previous file and write a measure_runtime coroutine that will execute async_comprehension four times in parallel using asyncio.gather.
 
 ---
 
 ## Author
-* **Diego Monroy** - [diegozencode](https://github.com/diegozencode)
+* **Diego Monroy** (@diegozencode) - [<img src="https://img.shields.io/badge/Portfolio-20d6fe.svg?&style=plastic"/>](https://diegozencode.github.io/)
+[<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/diegozencode)
+[<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/diegozencode)
+[<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/diegozencode)
