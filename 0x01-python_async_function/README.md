@@ -1,13 +1,14 @@
 # 0x01. Python - Async
 
 ## Description:bulb:
+
 Async, async everywhere
 
-* Async and await syntax
-* How to execute an async program with asyncio
-* How to run concurrent coroutines
-* How to create asyncio tasks
-* How to use the random module
+- Async and await syntax
+- How to execute an async program with asyncio
+- How to run concurrent coroutines
+- How to create asyncio tasks
+- How to use the random module
 
 ## Technologies & Tools:computer:
 
@@ -22,14 +23,17 @@ Async, async everywhere
 ---
 
 ## Resources:books:
+
 Read or watch:
-* [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/)
-* [asyncio - Asynchronous I/O](https://docs.python.org/3/library/asyncio.html)
-* [random.uniform](https://docs.python.org/3/library/random.html#random.uniform)
+
+- [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/)
+- [asyncio - Asynchronous I/O](https://docs.python.org/3/library/asyncio.html)
+- [random.uniform](https://docs.python.org/3/library/random.html#random.uniform)
 
 ---
 
 ## Files:card_file_box:
+
 ### [0. The basics of async](./0-basic_async_syntax.py)
 
 ### [1. Let's execute multiple coroutines at the same time with async](./1-concurrent_coroutines.py)
@@ -43,7 +47,8 @@ Read or watch:
 ---
 
 ## Author
-* **Diego Monroy** (@diegozencode) - [<img src="https://img.shields.io/badge/Portfolio-20d6fe.svg?&style=plastic"/>](https://diegozencode.github.io/)
-[<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/diegozencode)
-[<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/diegozencode)
-[<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/diegozencode)
+
+- **Diego Monroy** (@diegozencode) - [<img src="https://img.shields.io/badge/Portfolio-20d6fe.svg?&style=plastic"/>](https://diegozencode.github.io/)
+  [<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/diegozencode)
+  [<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/diegozencode)
+  [<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/diegozencode)
