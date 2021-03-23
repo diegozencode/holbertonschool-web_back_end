@@ -42,4 +42,17 @@ class Server:
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """dataset
         """
-        pass
+        if index is None:
+            index = 1
+        dataset: Dict[int, List] = self.indexed_dataset()
+        assert (index <= len(dataset))
+        next_index = index + page_size
+
+        data = {
+            'index': index,
+            'next_index': next_index,
+            'page_size': page_size,
+            'data': dataset.get(index),
+        }
+
+        return data
