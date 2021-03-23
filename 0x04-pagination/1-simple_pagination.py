@@ -34,4 +34,21 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """dataset page
         """
-        pass
+        """Dataset page
+        Parameters
+        ------------
+        page: int
+            page number, has to be an int and greater than 0
+        page_size: int
+            size of the page, has to be an int and greater than 0
+        Returns
+        --------
+        list
+            page of the dataset, list of rows, empty list if out of range
+        """
+        assert(type(page) == int and type(page_size) == int)
+        assert (page > 0 and page_size > 0), "Testing"
+
+        start: int = index_range(page, page_size)[0]
+        end: int = index_range(page, page_size)[1]
+        return self.dataset()[start:end]
