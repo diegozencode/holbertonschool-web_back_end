@@ -1,70 +1,68 @@
 # 0x06. Basic authentication
 
-## Resources:books:
-Read or watch:
-* [REST API Authentication Mechanisms](https://intranet.hbtn.io/rltoken/Yx1Na2qEzCLnke8RnpACDw)
-* [Base64 in Python](https://intranet.hbtn.io/rltoken/R2kTeyWl2ef19mdxQuffww)
-* [HTTP header Authorization](https://intranet.hbtn.io/rltoken/5BfGd-_oV9Asi_Ymi_lRSA)
-* [Flask](https://intranet.hbtn.io/rltoken/3ivma6PpGZfjzDrA2zLq7g)
-* [Base64 - concept](https://intranet.hbtn.io/rltoken/8ckHTvJq00WnvgEmn6GGtg)
+## Description:bulb:
+
+Implement a Basic Authentication on a simple API
+
+- What authentication means
+- What Base64 is
+- How to encode a string in Base64
+- What Basic authentication means
+- How to send the Authorization header
+
+## Technologies & Tools:computer:
+
+[![Ubuntu](https://img.shields.io/badge/≡-Ubuntu-E95420?&style=flat-square&logo=Ubuntu&labelColor=282828)](https://ubuntu.com/)
+[![Git](https://img.shields.io/badge/≡-Git-F05032?logo=git&style=flat-square&labelColor=282828)](https://git-scm.com/)
+[![GNU_Bash](https://img.shields.io/badge/≡-GNU_Bash-4EAA25?logo=GNU-Bash&style=flat-square&labelColor=282828)](https://www.gnu.org/software/bash/)
+[![Vim](https://img.shields.io/badge/≡-Vim-019733?logo=Vim&style=flat-square&logoColor=019733&labelColor=282828)](https://www.vim.org/)
+[![Vagrant](https://img.shields.io/badge/≡-Vagrant-1563FF?logo=vagrant&style=flat-square&logoColor=1563FF&labelColor=282828)](https://www.vagrantup.com/)
+[![VS_Code](https://img.shields.io/badge/≡-VS_Code-007ACC?logo=visual-studio-code&style=flat-square&logoColor=007ACC&labelColor=282828)](https://code.visualstudio.com/)
+[![Python](https://img.shields.io/badge/≡-Python-3776AB?logo=Python&style=flat-square&labelColor=282828)](https://www.python.org/)
+[![GitHub](https://img.shields.io/badge/≡-GitHub-181717?logo=GitHub&style=flat-square&labelColor=282828)](https://github.com/)
+[![Flask](https://img.shields.io/badge/≡-Flask-000000?logo=Flask&style=flat-square&labelColor=282828)](https://flask.palletsprojects.com/en/1.1.x/)
 
 ---
-## Learning Objectives:bulb:
-What you should learn from this project:
 
-* What authentication means
-* What Base64 is
-* How to encode a string in Base64
-* What Basic authentication means
-* How to send the Authorization header
+## Resources:books:
+
+Read or watch:
+
+- [REST API Authentication Mechanisms](https://www.youtube.com/watch?v=501dpx2IjGY)
+- [Base64 in Python](https://docs.python.org/3.7/library/base64.html)
+- [HTTP header Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- [Flask](https://palletsprojects.com/p/flask/)
+- [Base64 - concept](https://en.wikipedia.org/wiki/Base64)
 
 ---
 
 ### [0. Simple-basic-API](./api/v1/app.py)
-* Download and start your project from this archive.zip
-
 
 ### [1. Error handler: Unauthorized](./api/v1/app.py)
-* What the HTTP status code for a request unauthorized? 401 of course!
-
 
 ### [2. Error handler: Forbidden](./api/v1/auth)
-* What the HTTP status code for a request where the user is authenticate but not allowed to access to a resource? 403 of course!
-
 
 ### [3. Auth class](./api/v1/auth/auth.py)
-* Now you will create a class to manage the API authentication.
-
 
 ### [4. Define which routes don't need authentication](./api/v1/app.py)
-* Update the method def require_auth(self, path: str, excluded_paths: List[str]) -> bool: in Auth that returns True if the path is not in the list of strings excluded_paths:
-
 
 ### [5. Request validation!](./api/v1/app.py)
-* Now you will validate all requests to secure the API:
-
 
 ### [6. Basic auth](./api/v1/auth/basic_auth.py)
-* Create a class BasicAuth that inherits from Auth. For the moment this class will be empty.
-
 
 ### [7. Basic - Base64 part](./api/v1/auth/basic_auth.py)
-* Add the method def extract_base64_authorization_header(self, authorization_header: str) -> str: in the class BasicAuth that returns the Base64 part of the Authorization header for a Basic Authentication:
-
 
 ### [8. Basic - Base64 decode](./api/v1/auth/basic_auth.py)
-* Add the method def decode_base64_authorization_header(self, base64_authorization_header: str) -> str: in the class BasicAuth that returns the decoded value of a Base64 string base64_authorization_header:
-
 
 ### [9. Basic - User credentials](./api/v1/auth/basic_auth.py)
-* Add the method def extract_user_credentials(self, decoded_base64_authorization_header: str) -> (str, str) in the class BasicAuth that returns the user email and password from the Base64 decoded value.
-
 
 ### [10. Basic - User object](./api/v1/auth/basic_auth.py)
-* Add the method def user_object_from_credentials(self, user_email: str, user_pwd: str) -> TypeVar('User'): in the class BasicAuth that returns the User instance based on his email and password.
-
 
 ---
 
 ## Author
-* **Diego Monroy** - [diegozencode](https://github.com/diegozencode)
+
+- **Diego Monroy** (@diegozencode) - [<img src="https://img.shields.io/badge/Portfolio-20d6fe.svg?&style=plastic"/>](https://diegozencode.github.io/)
+  [<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/diegozencode)
+  [<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/diegozencode)
+  [<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/diegozencode)
