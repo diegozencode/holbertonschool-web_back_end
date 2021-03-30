@@ -4,5 +4,7 @@
 *.[oa]
 # Ignore executables
 [abcdefghijk]
-#Byte-compiled
+# Byte-compiled
 __pycache__/
+# Ignore database basic atuhentication
+.db_User.json
