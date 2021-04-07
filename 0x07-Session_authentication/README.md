@@ -35,6 +35,13 @@ Read or watch:
 
 ---
 
+## Requirements:hammer:
+
+- Ubuntu 18.04 LTS using python3 (version 3.7)
+- Use pycodestyle (version 2.5)
+
+---
+
 ## Learning Objectives:bulb:
 
 What you should learn from this project:
