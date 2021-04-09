@@ -42,18 +42,6 @@ Read or watch:
 
 ---
 
-## Learning Objectives:bulb:
-
-What you should learn from this project:
-
-- What authentication means
-- What session authentication means
-- What Cookies are
-- How to send Cookies
-- How to parse Cookies
-
----
-
 ### [0. Et moi et moi et moi!](./api/v1/app.py)
 
 ### [1. Empty session](./api/v1/auth/session_auth.py)
