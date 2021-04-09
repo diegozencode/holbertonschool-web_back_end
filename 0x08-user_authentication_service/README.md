@@ -1,97 +1,98 @@
 # 0x08. User authentication service
 
-## Resources:books:
-Read or watch:
-* [Flask documentation](https://intranet.hbtn.io/rltoken/pmustxytL0mvk0Xo1X5A6g)
-* [Requests module](https://intranet.hbtn.io/rltoken/YrhQSCpUMTZ-od0EAPANwg)
-* [HTTP status codes](https://intranet.hbtn.io/rltoken/iWzNygULyRyOnkBPXDZrRw)
+# Description:bulb:
+
+Implement a user authentication service
+
+"I changed all my passwords to 'incorrect'. So whenever I forget, it will tell me 'Your password is incorrect.'"
+
+- How to declare API routes in a Flask app
+- How to get and set cookies
+- How to retrieve request form data
+- How to return various HTTP status codes
+
+## Technologies & Tools:computer:
+
+[![Ubuntu](https://img.shields.io/badge/≡-Ubuntu-E95420?&style=flat-square&logo=Ubuntu&labelColor=282828)](https://ubuntu.com/)
+[![Git](https://img.shields.io/badge/≡-Git-F05032?logo=git&style=flat-square&labelColor=282828)](https://git-scm.com/)
+[![GNU_Bash](https://img.shields.io/badge/≡-GNU_Bash-4EAA25?logo=GNU-Bash&style=flat-square&labelColor=282828)](https://www.gnu.org/software/bash/)
+[![Vim](https://img.shields.io/badge/≡-Vim-019733?logo=Vim&style=flat-square&logoColor=019733&labelColor=282828)](https://www.vim.org/)
+[![Vagrant](https://img.shields.io/badge/≡-Vagrant-1563FF?logo=vagrant&style=flat-square&logoColor=1563FF&labelColor=282828)](https://www.vagrantup.com/)
+[![VS_Code](https://img.shields.io/badge/≡-VS_Code-007ACC?logo=visual-studio-code&style=flat-square&logoColor=007ACC&labelColor=282828)](https://code.visualstudio.com/)
+[![Python](https://img.shields.io/badge/≡-Python-3776AB?logo=Python&style=flat-square&labelColor=282828)](https://www.python.org/)
+[![GitHub](https://img.shields.io/badge/≡-GitHub-181717?logo=GitHub&style=flat-square&labelColor=282828)](https://github.com/)
+[![Flask](https://img.shields.io/badge/≡-Flask-000000?logo=Flask&style=flat-square&labelColor=282828)](https://flask.palletsprojects.com/en/1.1.x/)
 
 ---
-## Learning Objectives:bulb:
-What you should learn from this project:
+
+## Resources:books:
+
+Read or watch:
+
+- [Flask documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
+- [Requests module](https://requests.kennethreitz.org/en/master/user/quickstart/)
+- [HTTP status codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+
+---
+
+## Requirements:hammer:
+
+- Ubuntu 18.04 LTS using python3 (version 3.7)
+- Use pycodestyle (version 2.5)
+
+### Install bcrypt
+
+```bash
+pip3 install bcrypt
+```
 
 ---
 
 ### [0. User model](./user.py)
-* In this task you will create a SQLAlchemy model named User for a database table named users (by using the mapping declaration of SQLAlchemy). 
-
 
 ### [1. create user](./db.py)
-* In this task, you will complete the DB class provided below to implement the add_user method.
-
 
 ### [2. Find user](./db.py)
-* In this task you will implement the DB.find_user_by method. This method takes in arbitrary keyword arguments and returns the first row found in the users table as filtered by the method’s input arguments. No validation of input arguments required at this point.
-
 
 ### [3. update user](./db.py)
-* In this task, you will implement the DB.update_user method that takes as argument a required user_id integer and arbitrary keyword arguments, and returns None.
-
 
 ### [4. Hash password](./auth.py)
-* In this task you will define a _hash_password method that takes in a password string arguments and returns a string.
-
 
 ### [5. Register user](./auth.py)
-* In this task, you will implement the Auth.register_user in the Auth class provided below:
-
 
 ### [6. Basic Flask app](./app.py)
-* In this task, you will set up a basic Flask app.
-
 
 ### [7. Register user](./app.py)
-* In this task, you will implement the end-point to register a user. Define a users function that implements the POST /users route.
-
 
 ### [8. Credentials validation](./auth.py)
-* In this task, you will implement the Auth.valid_login method. It should expect email and password required arguments and return a boolean.
-
 
 ### [9. Generate UUIDs](./auth.py)
-* In this task you will implement a _generate_uuid function in the auth module. The function should return a string representation of a new UUID. Use the uuid module.
-
 
 ### [10. Get session ID](./auth.py)
-* In this task, you will implement the Auth.create_session method. It takes an email string argument and returns the session ID as a string.
-
 
 ### [11. Log in](./app.py)
-* In this task, you will implement a login function to respond to the POST /sessions route.
-
 
 ### [12. Find user by session ID](./auth.py)
-* In this task, you will implement the Auth.get_user_from_session_id method. It takes a single session_id string argument and returns a string or None.
-
 
 ### [13. Destroy session](./auth.py)
-* In this task, you will implement Auth.destroy_session. The method takes a single user_id integer argument and returns None.
-
 
 ### [14. Log out](./app.py)
-* In this task, you will implement a logout function to respond to the DELETE /sessions route.
-
 
 ### [15. User profile](./app.py)
-* In this task, you will implement a profile function to respond to the GET /profile route.
-
 
 ### [16. Generate reset password token](./auth.py)
-* In this task, you will implement the Auth.get_reset_password_token method. It take an email string argument and returns a string.
-
 
 ### [17. Get reset password token](./app.py)
-* In this task, you will implement a get_reset_password_token function to respond to the POST /reset_password route.
-
 
 ### [18. Update password](./auth.py)
-* In this task, you will implement the Auth.update_password method. It takes reset_token string argument and a password string argument and returns None.
-
 
 ### [19. Update password end-point](./app.py)
-* In this task you will implement the update_password function in the app module to respond to the PUT /reset_password route.
 
 ---
 
 ## Author
-* **Diego Monroy** - [diegozencode](https://github.com/diegozencode)
+
+- **Diego Monroy** (@diegozencode) - [<img src="https://img.shields.io/badge/Portfolio-20d6fe.svg?&style=plastic"/>](https://diegozencode.me)
+  [<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/diegozencode)
+  [<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/diegozencode)
+  [<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/diegozencode)
