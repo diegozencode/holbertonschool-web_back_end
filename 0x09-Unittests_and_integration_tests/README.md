@@ -1,55 +1,79 @@
 # 0x09. Unittests and Integration Tests
 
-## Resources:books:
-Read or watch:
-* [unittest — Unit testing framework](https://intranet.hbtn.io/rltoken/CZk1PZz753_Dz-0IoyGiyA)
-* [unittest.mock — mock object library](https://intranet.hbtn.io/rltoken/QEQFuhCQnu--N3p-K2jL2Q)
-* [How to mock a readonly property with mock?](https://intranet.hbtn.io/rltoken/jPX7moqAyFOKcP-Es1R5LQ)
-* [parametrized](https://intranet.hbtn.io/rltoken/GkU3bOnYHUtRWGSKmuSQyg)
-* [Memoization](https://intranet.hbtn.io/rltoken/bdcbwegwwMOr1QZJIwAMsw)
+# Description:bulb:
+
+Unit testing is the process of testing that a particular function returns expected results for different set of inputs. A unit test is supposed to test standard inputs and corner cases. A unit test should only test the logic defined inside the tested function. Most calls to additional functions should be mocked, especially if they make network or database calls.
+
+The goal of a unit test is to answer the question: if everything defined outside this function works as expected, does this function work as expected?
+
+Integration tests aim to test a code path end-to-end. In general, only low level functions that make external calls such as HTTP requests, file I/O, database I/O, etc. are mocked.
+
+- The difference between unit and integration tests
+- Common testing patterns such as mocking, parametrizations and fixtures
+
+## Technologies & Tools:computer:
+
+[![Ubuntu](https://img.shields.io/badge/≡-Ubuntu-E95420?&style=flat-square&logo=Ubuntu&labelColor=282828)](https://ubuntu.com/)
+[![Git](https://img.shields.io/badge/≡-Git-F05032?logo=git&style=flat-square&labelColor=282828)](https://git-scm.com/)
+[![GNU_Bash](https://img.shields.io/badge/≡-GNU_Bash-4EAA25?logo=GNU-Bash&style=flat-square&labelColor=282828)](https://www.gnu.org/software/bash/)
+[![Vim](https://img.shields.io/badge/≡-Vim-019733?logo=Vim&style=flat-square&logoColor=019733&labelColor=282828)](https://www.vim.org/)
+[![Vagrant](https://img.shields.io/badge/≡-Vagrant-1563FF?logo=vagrant&style=flat-square&logoColor=1563FF&labelColor=282828)](https://www.vagrantup.com/)
+[![VS_Code](https://img.shields.io/badge/≡-VS_Code-007ACC?logo=visual-studio-code&style=flat-square&logoColor=007ACC&labelColor=282828)](https://code.visualstudio.com/)
+[![Python](https://img.shields.io/badge/≡-Python-3776AB?logo=Python&style=flat-square&labelColor=282828)](https://www.python.org/)
+[![GitHub](https://img.shields.io/badge/≡-GitHub-181717?logo=GitHub&style=flat-square&labelColor=282828)](https://github.com/)
 
 ---
+
+## Resources:books:
+
+Read or watch:
+
+- [unittest — Unit testing framework](https://docs.python.org/3/library/unittest.html)
+- [unittest.mock — mock object library](https://docs.python.org/3/library/unittest.mock.html)
+- [How to mock a readonly property with mock?](https://stackoverflow.com/questions/11836436/how-to-mock-a-readonly-property-with-mock)
+- [parametrized](https://pypi.org/project/parameterized/)
+- [Memoization](https://en.wikipedia.org/wiki/Memoization)
+
+---
+
 ## Learning Objectives:bulb:
-What you should learn from this project:
+
+- Ubuntu 18.04 LTS using python3 (version 3.7)
+- Use pycodestyle (version 2.5)
+
+### Execute tests
+
+```bash
+python -m unittest path/to/test_file.py
+```
 
 ---
 
 ### [0. Parameterize a unit test](./test_utils.py)
-* Familiarize yourself with the utils.access_nested_map function and understand its purpose. Play with it in the Python console to make sure you understand.
-
 
 ### [1. Parameterize a unit test](./test_utils.py)
-* Implement TestAccessNestedMap.test_access_nested_map_exception. Use the assertRaises context manager to test that a KeyError is raised for the following inputs (use @parametrized.expand):
-
 
 ### [2. Mock HTTP calls](./test_utils.py)
-* Familiarize yourself with the utils.get_json function.
-
 
 ### [3. Parameterize and patch](./test_utils.py)
-* Read about memoization and familiarize yourself with the utils.memoize decorator.
-
 
 ### [4. Parameterize and patch as decorators](./test_client.py)
-* Familiarize yourself with the client.GithubOrgClient class.
 
-
-### [5.  Mocking a property](./test_client.py)
-* memoize turns methods into properties. Read up on how to mock a property (see resource).
-
+### [5. Mocking a property](./test_client.py)
 
 ### [6. More patching](./test_client.py)
-* Implement TestGithubOrgClient.test_public_repos to unit-test GithubOrgClient.public_repos.
-
 
 ### [7. Parameterize](./test_client.py)
-* Implement TestGithubOrgClient.test_has_license to unit-test GithubOrgClient.has_license.
-
 
 ### [8. Integration test: fixtures](./test_client.py)
-* Create the TestIntegrationGithubOrgClient(unittest.TestCase) class and implement the setUpClass and tearDownClass which are part of the unittest.TestCase API.
+
+### [9. Integration tests](./test_client.py)
 
 ---
 
 ## Author
-* **Diego Monroy** - [diegozencode](https://github.com/diegozencode)
+
+- **Diego Monroy** (@diegozencode) - [<img src="https://img.shields.io/badge/Portfolio-20d6fe.svg?&style=plastic"/>](https://diegozencode.me)
+  [<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/diegozencode)
+  [<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/diegozencode)
+  [<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/diegozencode)
