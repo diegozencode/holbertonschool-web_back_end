@@ -1,6 +1,6 @@
 # 0x0C. MySQL advanced
 
-# Description:bulb:
+## Description:bulb:
 
 Advanced SQL
 
