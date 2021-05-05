@@ -2,7 +2,7 @@
 
 ## Description:bulb:
 
-Introduction to  NoSQL
+Introduction to NoSQL
 
 - What NoSQL means
 - What is difference between SQL and NoSQL
@@ -48,7 +48,7 @@ Read or watch:
 - Ubuntu 18.04 LTS using `MongoDB` (version 4.4)
 - `python3` (version 3.7)
 - `PyMongo` (version 3.11)
-- `pycodestyle` style (version 2.5.*)
+- `pycodestyle` style (version 2.5.\*)
 
 ### How to install MongoDB 4.4 in Ubuntu 18.04
 

@@ -8,3 +8,6 @@
 __pycache__/
 # Ignore database basic atuhentication
 .db_User.json
+# ignore dumps NoSQL databases
+dump.zip
+dump/
