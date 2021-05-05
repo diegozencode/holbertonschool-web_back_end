@@ -44,6 +44,7 @@ pip install Flask-Babel
 
 ---
 
+## Files:card_file_box:
 ### [0. Basic Flask app](./0-app.py)
 
 ### [1. Basic Babel setup](./1-app.py)

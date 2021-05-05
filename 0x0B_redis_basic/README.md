@@ -47,6 +47,7 @@ foo@pop-os:~$ sed -i "s/bind .*/bind 127.0.0.1/g" /etc/redis/redis.conf
 
 ---
 
+## Files:card_file_box:
 ### [0. Writing strings to Redis](./exercise.py)
 
 ### [1. Reading from Redis and recovering original type](./exercise.py)
