@@ -130,7 +130,7 @@ module.exports = {
 
 ### [4. Rest parameter syntax for functions](./4-rest-parameter.js)
 
-### [5. The wonders of spread syntax](./ 5-spread-operator.js)
+### [5. The wonders of spread syntax](./5-spread-operator.js)
 
 ### [6. Take advantage of template literals](./6-string-interpolation.js)
 
