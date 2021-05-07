@@ -11,3 +11,5 @@ __pycache__/
 # ignore dumps NoSQL databases
 dump.zip
 dump/
+# node modules
+node_modules/
