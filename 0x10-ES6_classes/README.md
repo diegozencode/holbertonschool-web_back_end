@@ -31,8 +31,8 @@ ES6 Classes for all the things!
 
 Read or watch:
 
-- [Classes](https://intranet.hbtn.io/rltoken/C7olHTRPCaiklNo2GRAn_w)
-- [Metaprogramming](https://intranet.hbtn.io/rltoken/ovRM79Xgaurxta1j-DpEng)
+- [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+- [Metaprogramming](https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/#symbolspecies)
 
 ---
 
