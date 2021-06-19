@@ -8,8 +8,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const data = await countStudents(process.argv[2]);
-  res.send(`This is the list of our students\n${data}`);
+  try {
+    const data = await countStudents(process.argv[2]);
+    res.send(`This is the list of our students\n${data}`);
+  } catch (error) {
+    res.send(`This is the list of our students\n${error.message}`);
+  }
 });
 
 app.listen(1245);
