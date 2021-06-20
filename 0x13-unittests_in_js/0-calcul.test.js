@@ -14,4 +14,7 @@ describe('calculateNumber', function() {
   it("checks equality", function() {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
+  it("checks equality second number rounded", function() {
+    assert.strictEqual(calculateNumber(3.7, 3), 7);
+  });
 });
