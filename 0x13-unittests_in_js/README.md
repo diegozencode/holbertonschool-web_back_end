@@ -5,7 +5,7 @@
 You can't fail tests if you skip them
 
 - How to use Mocha to write a test suite
-- Ho0w to use different assertion libraries (Node or Chai)
+- How to use different assertion libraries (Node or Chai)
 - How to present long test suites
 - When and how to use spies
 - When and how to use stubs
